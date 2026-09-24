@@ -1,0 +1,30 @@
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #d46262;
+    text-align: center;
+    font-size: 20px;
+}
+
+h1{
+    color:#fff
+}
+section{
+    background: #fff;
+    border-radius: 10px;
+    padding: 15px;
+    width: 500px;
+    box-shadow: 1.5px 1.5px 1.5px black;
+    margin: auto;
+}
+
+#butao{
+   font-size: 20px;
+   cursor: pointer;
+    transition: transform 0.1s ease, background-color 0.3s ease;
+    background-color: lightblue;
+    
+}
+#butao:hover {
+    transform: scale(1.1);
+    background-color: deepskyblue;
+}

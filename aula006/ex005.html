@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Primeiros passos com o DOM</title>
+
+    <style>
+      body {
+        background-color: lightblue;
+        color: black;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Iniciando estudos com o <strong>DOM</strong></h1>
+    <p>Aqui vai o resultado</p>
+    <p>Estou aprendendo a usar o <strong>DOM</strong></p>
+    <div id="msg">clique em mim</div>
+
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim autem quidem
+      voluptas incidunt porro voluptatibus ex inventore nisi repudiandae culpa!
+      Architecto dolore cumque dolorum id dicta facere ipsum culpa adipisci!
+    </p>
+
+    <p id="nirvana">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt autem
+      dipisci consectetur a labore aliquam harumminima temporibus, accusantium
+      assumenda sed exercitationem, tempore numquam expedita dicta nesciunt quod
+      quisquam delectus!
+    </p>
+
+    <script>
+      // |CLASS, |TAG, NOME, |SELETOR, |ID //
+
+      /* let d  = document.getElementById("msg")
+       document.write(d.innerText) 
+       d.innerText = 'Olá Mundo' // alterar o conteúdo
+      d.style.background = "yellow" */
+
+      /* let p1 = document.getElementsByTagName('p')[1]
+      document.write(p1.innerHTML) 
+      p1.style.background = 'white' */
+
+      /* let A = document.getElementsByClassName('A')[0]
+      document.write(A.innerText)
+      A.innerText = " Alterando o Texto"
+      A.style.background = "lightyellow" */
+
+      /* let nirvana = document.querySelector('#nirvana')
+      document.write(nirvana.innerText)
+      nirvana.innerText = "Nirvana foi uma banda de rock famosa nos anos 90."
+      nirvana.style.background = 'yellow' */
+    </script>
+  </body>
+</html>

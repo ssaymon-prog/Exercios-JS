@@ -1,0 +1,110 @@
+<!doctype html>
+
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>JS</title>
+
+    <style>
+      div#area {
+        background-color: lightblue;
+        text-align: center;
+        width: 200px;
+        height: 200px;
+        line-height: 200px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 22px;
+        color: #fff;
+      }
+
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div
+      id="area"
+      onmouseenter="entrar()"
+      onmouseout="sair()"
+      onclick="clicar()"
+    >
+      INTERAJA
+    </div>
+
+    <h1>Soma de Valores</h1>
+    <form>input</form>
+    <input type="number" name="txtn1" id="txtn1" /> +
+    <input type="number" name="txtn2" id="txtn2" />
+    <input type="button" value="calcular" onclick="somar()" />
+    <div id="res">Resultado</div>
+    <br />
+    <h1>Idade para votar</h1>
+
+    <form
+      onsubmit="
+        verificar();
+        return false;
+      "
+    >
+      Digite seu nome : <input type="text" name="name" id="name" />
+      <br /><br />Qual sua idade? <input type="number" name="vtx1" id="vtx1" />
+
+      <input type="submit" value="Verificar" />
+    </form>
+    <br />
+    <div id="responce">Resposta</div>
+
+    <script>
+      var a = document.getElementById("area");
+      a.addEventListener("onmouseenter", entrou);
+      a.addEventListener("onmouseout", sair);
+      a.addEventListener("onmouseclick", clicar);
+
+      function entrar() {
+        a.innerHTML = "Entrou";
+
+        a.style.background = "green";
+      }
+
+      function sair() {
+        a.innerHTML = "SAIU";
+        a.style.background = "lightcoral";
+      }
+
+      function clicar() {
+        a.innerHTML = "Clicou";
+        a.style.background = "brown";
+      }
+
+      function somar() {
+        var tn1 = document.getElementById("txtn1");
+        var tn2 = document.getElementById("txtn2");
+        var res = document.getElementById("res");
+        var n1 = Number(tn1.value);
+        var n2 = Number(tn2.value);
+        var s = n1 + n2;
+        res.innerHTML = `A soma entre ${n1} e    ${n2}  é: ${s}`;
+      }
+
+      function verificar() {
+        var vt1 = document.getElementById("vtx1");
+        var idade = Number(vt1.value);
+        var r = document.getElementById("responce");
+        var name = document.getElementById("name").value;
+
+        if (idade < 16) {
+          r.innerHTML = `<strong>${name}, você Não Vota</strong>`;
+        } else if (idade < 18 || idade > 65) {
+          r.innerHTML = ` <strong>${name}, seu Voto é Opcional</strong>`;
+        } else {
+          r.innerHTML = `<strong>${name}, seu Voto é Obrigatório</strong>`;
+        }
+      }
+    </script>
+  </body>
+</html>

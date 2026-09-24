@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EVENTOS DOM</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div
+      id="area"
+      onclick="clicar()"
+      onmouseenter="entrar()"
+      onmouseout="sair()"
+    >
+      <strong>INTERAJA</strong>
+    </div>
+
+    <h1>Somando Valores</h1>
+    <input type="number" name="txtn1" id="txtn1" /> +
+    <input type="number" name="txtn2" id="txtn2" />
+    <input type="button" value="somar" onclick="somar()" />
+    <div id="res">Resultado</div>
+
+    <h1>Diminuindo Valores</h1>
+    <input type="number" name="num1" id="num1" /> -
+    <input type="number" name="num2" id="num2" />
+    <input type="button" value="subtrair" onclick="subtração()" />
+    <div id="sol">Resolução</div>
+
+    <h1>Multiplicando valores</h1>
+    <input type="number" name="mul1" id="mul1" />
+    <input type="number" name="mul2" id="mul2" />
+    <input type="button" value="multiplicar" onclick="multiplicar()" />
+    <div id="answer">Resposta</div>
+
+    <h1>Divisão de valores</h1>
+    <input type="number" name="d1" id="d1" />
+    <input type="number" name="d2" id="d2" />
+    <input type="button" value="dividir" onclick="dividir()" />
+    <div id="quo">Quociente</div>
+<!---->
+    <!-------------------------------------------------------------------------------------------------------------->
+    <script>
+      var a = document.getElementById("area");
+      a.addEventListener("onclick", clicar);
+      a.addEventListener("onmouseenter", entrou);
+      a.addEventListener("onmouseout", saiu);
+
+      function entrar() {
+        a.innerText = "Entrou";
+        a.style.background = "green";
+      }
+
+      function sair() {
+        a.innerText = "SAIU";
+        a.style.background = "lightyellow";
+      }
+
+      function clicar() {
+        a.innerText = "Clicou";
+        a.style.background = "red";
+      }
+
+      function somar() {
+        let tn1 = document.getElementById("txtn1");
+        let tn2 = document.getElementById("txtn2");
+        let n1 = Number(tn1.value);
+        let n2 = Number(tn2.value);
+        let res = document.getElementById("res");
+        let s = n1 + n2;
+        res.innerHTML = `A soma entre ${n1} e ${n2} é = ${s}`;
+      }
+
+      function subtração() {
+        let t1 = document.getElementById("num1");
+        let t2 = document.getElementById("num2");
+        let nmr1 = Number(t1.value);
+        let nmr2 = Number(t2.value);
+        let r = document.getElementById("sol");
+        let sub = nmr1 - nmr2;
+        r.innerHTML = `A subtração entre ${nmr1} e ${nmr2} é = ${sub}`;
+      }
+
+      function multiplicar() {
+        let m1 = document.getElementById("mul1");
+        let m2 = document.getElementById("mul2");
+        let v1 = Number(m1.value);
+        let v2 = Number(m2.value);
+        let p = document.getElementById("answer");
+        let re = v1 * v2;
+        p.innerHTML = `A multiplicação entre ${v1} e ${v2} = ${re}`;
+      }
+
+      function dividir() {
+        let div1 = document.getElementById("d1");
+        let div2 = document.getElementById("d2");
+        let val1 = Number(div1.value);
+        let val2 = Number(div2.value);
+        let q = document.getElementById("quo");
+        let qo = val1 / val2;
+        q.innerHTML = `A divisão entre ${val1} e ${val2} = ${qo}`;
+      }
+    </script>
+  </body>
+</html>

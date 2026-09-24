@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modelo de Exercício</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header><h1>VERIFICADOR DE IDADE</h1></header>
+
+    <section>
+      <div>
+        <form
+          onsubmit="
+            verificar();
+            return false;
+          "
+        >
+          Ano de Nascimento: <input type="number" id="txtano" />
+
+          <p>
+            <input type="radio" name="radsex" id="mas" />
+            <label for="mas">Masculino</label>
+
+            <input type="radio" name="radsex" id="fem" />
+            <label for="fem">Feminino</label>
+          </p>
+          <input type="submit" value="Verificar" id="ver"/> <br />
+          <br />
+        </form>
+      </div>
+
+      <div id="res">
+        <strong>Preencha os dados acima para ver o resultado...</strong>
+      </div>
+    </section>
+    <footer>&copy; SAYMON</footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

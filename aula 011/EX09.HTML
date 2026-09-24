@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>País</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #bt:hover{
+            background: red;
+            transform: (-100px);
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Identificador de nacionalidade</h1>
+    
+   Qual o seu país? <input type="text" id="país">
+   <input type="button" value="verificar" onclick="verificar()" id="bt">
+   <div id="res">Resultado</div>
+    
+   <script>
+    function verificar(){
+        let p = document.getElementById("país").value.toUpperCase()
+        let res = document.getElementById("res")
+        res.innerHTML = `<p> Seu país é ${p} </p>`
+        if (p == 'BRASIL'){
+            res.innerHTML += `Vocé é Brasileiro(a)`
+        } else {
+            res.innerHTML += `Você é Estrangeiro(a)`
+        }
+    }
+   </script>
+</body>
+</html>

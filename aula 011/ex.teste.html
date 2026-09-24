@@ -1,0 +1,50 @@
+<!--Fazer um resultado de notas. >60 aprovado. <60 reprovado <30 reprovado-->
+
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resultado do Exame</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+     
+      }
+      #bt {
+        cursor: pointer;
+        background-color: lightblue;
+      }
+      #res {
+        background-color: whitesmoke;
+        border: 2px solid black;
+        padding: 10px;
+        width: 240px;
+        margin-top: 10px;
+        ;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Resultado da Nota Total</h1>
+    Coloque sua nota aqui : <input type="number" name="ntx1" id="ntx1" />
+    <input type="button" value="Verificar" onclick="calcular()" id="bt" />
+    <div id="res">Resultado :</div>
+
+    <script>
+      function calcular() {
+        var n = document.getElementById("ntx1");
+        var val = Number(n.value);
+        var r = document.getElementById("res");
+
+        if (val > 59) {
+          r.innerHTML = `<p style = "color: green;"><strong> ✅ Você foi Aprovado</strong></p>`;
+        } else if (val < 30) {
+          r.innerHTML = `<strong><p style = "color: red;"> ❌ Você foi reprovado.</p></strong>`;
+        } else {
+          r.innerHTML = `<p style = "color: #eeb600;" ><strong> 🟡 Você está de Recuperação</strong></p>`;
+        }
+      }
+    </script>
+  </body>
+</html>
